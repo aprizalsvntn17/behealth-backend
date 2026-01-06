@@ -1,0 +1,752 @@
+{
+    "intents": [
+        {
+            "tag": "salam",
+            "patterns": [
+                "hai",
+                "halo",
+                "selamat pagi",
+                "selamat siang",
+                "selamat sore",
+                "selamat malam",
+                "hi",
+                "hello",
+                "assalamualaikum",
+                "permisi",
+                "apa kabar",
+                "hei",
+                "hey"
+            ],
+            "responses": [
+                "Halo! Selamat datang di Layanan Edukasi Kesehatan. Ada yang bisa saya bantu?",
+                "Hai! Saya siap membantu Anda dengan informasi kesehatan. Silakan tanyakan keluhan Anda.",
+                "Selamat datang! Saya chatbot kesehatan yang siap memberikan informasi. Apa yang ingin Anda tanyakan?"
+            ]
+        },
+        {
+            "tag": "perpisahan",
+            "patterns": [
+                "terima kasih",
+                "sampai jumpa",
+                "bye",
+                "dadah",
+                "selesai",
+                "sudah cukup",
+                "thanks",
+                "makasih",
+                "terimakasih banyak",
+                "goodbye",
+                "sampai nanti",
+                "saya pergi dulu"
+            ],
+            "responses": [
+                "Sama-sama! Semoga cepat sembuh dan tetap jaga kesehatan ya!",
+                "Terima kasih sudah berkonsultasi. Jangan ragu untuk bertanya lagi jika ada keluhan.",
+                "Sampai jumpa! Ingat untuk selalu konsultasi ke dokter jika keluhan berlanjut."
+            ]
+        },
+        {
+            "tag": "bantuan",
+            "patterns": [
+                "bisa bantu apa",
+                "menu",
+                "fitur apa saja",
+                "bisa tanya apa",
+                "kamu bisa apa",
+                "help",
+                "bantuan",
+                "cara pakai",
+                "panduan",
+                "apa saja yang bisa ditanyakan",
+                "layanan apa saja",
+                "fungsi chatbot ini"
+            ],
+            "responses": [
+                "Saya bisa membantu Anda dengan:\n1. Informasi gejala penyakit umum\n2. Saran penanganan awal\n3. Rekomendasi obat-obatan umum\n4. Kapan harus ke dokter\n5. Tips menjaga kesehatan\n\nSilakan tanyakan keluhan atau gejala yang Anda rasakan!",
+                "Chatbot kesehatan ini dapat memberikan informasi tentang:\n• Gejala dan penanganan penyakit ringan\n• Rekomendasi obat bebas/terbatas\n• Pertolongan pertama\n• Tips kesehatan\n\nCatatan: Saya bukan pengganti dokter. Untuk keluhan serius, segera kunjungi fasilitas kesehatan."
+            ]
+        },
+        {
+            "tag": "fallback",
+            "patterns": [
+                "asdfgh",
+                "xyz",
+                "entah",
+                "tidak tahu",
+                "apa ya",
+                "hmm",
+                "bingung"
+            ],
+            "responses": [
+                "Maaf, saya kurang memahami pertanyaan Anda. Bisa dijelaskan lebih detail tentang keluhan atau gejala yang Anda rasakan?",
+                "Mohon maaf, saya tidak mengerti. Silakan tanyakan tentang gejala kesehatan atau obat-obatan.",
+                "Saya belum bisa menjawab pertanyaan tersebut. Coba tanyakan tentang keluhan kesehatan seperti demam, batuk, sakit kepala, dll."
+            ]
+        },
+        {
+            "tag": "info_obat",
+            "patterns": [
+                "apa itu paracetamol",
+                "fungsi paracetamol",
+                "kegunaan ibuprofen",
+                "apa fungsi obat",
+                "obat untuk apa",
+                "manfaat obat",
+                "cara kerja obat",
+                "obat apa yang bagus",
+                "rekomendasi obat"
+            ],
+            "responses": [
+                "Beberapa obat umum dan fungsinya:\n\n1. Paracetamol: Penurun demam dan pereda nyeri ringan-sedang\n2. Ibuprofen: Anti-inflamasi, pereda nyeri, penurun demam\n3. Ambroxol: Mengencerkan dahak\n4. CTM: Antihistamin untuk alergi dan pilek\n5. Antasida: Menetralkan asam lambung\n6. Omeprazole: Mengurangi produksi asam lambung\n\nUntuk informasi obat spesifik, sebutkan nama obatnya ya!"
+            ]
+        },
+        {
+            "tag": "efek_samping_obat",
+            "patterns": [
+                "efek samping",
+                "efek samping obat",
+                "bahaya obat",
+                "dampak negatif obat",
+                "reaksi obat",
+                "alergi obat",
+                "overdosis",
+                "kebanyakan minum obat"
+            ],
+            "responses": [
+                "Efek samping umum obat-obatan:\n\n1. Paracetamol: Jarang, overdosis dapat merusak hati\n2. Ibuprofen: Nyeri lambung, mual (minum setelah makan)\n3. CTM: Mengantuk, mulut kering\n4. Ambroxol: Mual, gangguan pencernaan ringan\n5. Antibiotik: Diare, alergi kulit\n\nTips aman:\n- Ikuti dosis yang dianjurkan\n- Baca aturan pakai\n- Hentikan jika ada reaksi alergi\n- Konsultasi apoteker atau dokter jika ragu"
+            ]
+        },
+        {
+            "tag": "cara_minum_obat",
+            "patterns": [
+                "cara minum obat",
+                "aturan pakai obat",
+                "kapan minum obat",
+                "obat diminum sebelum atau sesudah makan",
+                "dosis obat",
+                "berapa kali minum obat",
+                "obat diminum berapa"
+            ],
+            "responses": [
+                "Panduan umum minum obat:\n\n1. SEBELUM MAKAN (perut kosong):\n   - Omeprazole, Lansoprazole\n   - Beberapa antibiotik\n\n2. SESUDAH MAKAN:\n   - Ibuprofen, Asam Mefenamat\n   - Obat lambung (Antasida)\n   - Vitamin\n\n3. BISA KAPAN SAJA:\n   - Paracetamol\n   - CTM\n\nTips:\n- Minum dengan air putih\n- Jangan dengan susu/teh/kopi\n- Habiskan antibiotik sesuai resep\n- Jangan gandakan dosis jika lupa"
+            ]
+        },
+        {
+            "tag": "sakit_kepala_ringan",
+            "patterns": [
+                "kepala saya sakit",
+                "pusing",
+                "sakit kepala",
+                "kepala terasa berat",
+                "migrain ringan",
+                "kepala pusing",
+                "sakit di kepala",
+                "kepala nyut nyutan",
+                "kepala berkunang kunang",
+                "kepala cenat cenut",
+                "migrain",
+                "vertigo ringan"
+            ],
+            "responses": [
+                "Untuk sakit kepala ringan, Anda bisa mencoba:\n1. Istirahat yang cukup\n2. Minum air putih minimal 8 gelas/hari\n3. Kompres dingin di dahi\n4. Obat: Paracetamol 500mg (3x sehari) atau Ibuprofen 400mg (3x sehari)\n\nJika sakit kepala berlanjut lebih dari 3 hari atau disertai demam tinggi, segera konsultasi ke dokter."
+            ]
+        },
+        {
+            "tag": "demam",
+            "patterns": [
+                "demam",
+                "badan panas",
+                "meriang",
+                "suhu tubuh tinggi",
+                "panas dingin",
+                "fever",
+                "suhu badan naik",
+                "badan terasa panas",
+                "suhu 38 derajat",
+                "suhu 39 derajat",
+                "demam tinggi"
+            ],
+            "responses": [
+                "Untuk mengatasi demam:\n1. Istirahat yang cukup\n2. Minum air putih lebih banyak\n3. Kompres hangat di dahi, ketiak, dan lipatan paha\n4. Obat penurun panas: Paracetamol 500mg (3-4x sehari) atau Ibuprofen 400mg (3x sehari)\n\nSegera ke dokter jika:\n- Demam >39°C\n- Berlangsung >3 hari\n- Disertai kejang, ruam, sesak napas, atau muntah terus menerus"
+            ]
+        },
+        {
+            "tag": "batuk_pilek",
+            "patterns": [
+                "batuk",
+                "pilek",
+                "flu",
+                "batuk pilek",
+                "hidung tersumbat",
+                "bersin bersin",
+                "ingus",
+                "batuk berdahak",
+                "batuk kering",
+                "selesma",
+                "influenza",
+                "hidung mampet",
+                "dahak"
+            ],
+            "responses": [
+                "Untuk mengatasi batuk pilek:\n1. Istirahat cukup\n2. Minum air hangat dan madu\n3. Konsumsi vitamin C\n4. Gunakan masker jika beraktivitas\n\nObat yang bisa digunakan:\n- Batuk berdahak: Ambroxol 30mg (3x sehari) atau Bromhexine\n- Batuk kering: Dextromethorphan atau OBH Combi\n- Pilek: CTM 4mg (3x sehari) atau Pseudoephedrine\n\nKonsultasi dokter jika batuk >2 minggu atau disertai darah."
+            ]
+        },
+        {
+            "tag": "sakit_tenggorokan",
+            "patterns": [
+                "sakit tenggorokan",
+                "tenggorokan sakit",
+                "tenggorokan perih",
+                "susah menelan",
+                "radang tenggorokan",
+                "amandel",
+                "tenggorokan gatal",
+                "sakit saat menelan"
+            ],
+            "responses": [
+                "Penanganan sakit tenggorokan:\n1. Kumur air garam hangat 3-4x sehari\n2. Minum air hangat dengan madu dan lemon\n3. Hindari makanan pedas dan berminyak\n4. Isap permen pelega tenggorokan (Strepsils, FG Troches)\n\nObat yang bisa digunakan:\n- Pereda nyeri: Paracetamol 500mg\n- Antiseptik kumur: Betadine Gargle\n- Pelega: Dequalinium (FG Troches)\n\nKe dokter jika:\n- Demam tinggi >3 hari\n- Sulit menelan/bernapas\n- Ada bercak putih di amandel\n- Bengkak di leher"
+            ]
+        },
+        {
+            "tag": "sakit_perut",
+            "patterns": [
+                "sakit perut",
+                "perut sakit",
+                "perut mulas",
+                "perut melilit",
+                "kram perut",
+                "nyeri perut",
+                "sakit di perut",
+                "perut tidak enak",
+                "kembung",
+                "perut begah"
+            ],
+            "responses": [
+                "Sakit perut bisa disebabkan berbagai hal. Penanganan awal:\n1. Hindari makanan pedas dan asam\n2. Makan teratur dengan porsi kecil\n3. Minum air hangat\n\nObat yang bisa digunakan:\n- Maag: Antasida, Omeprazole 20mg (1x sehari)\n- Kembung: Simetikon atau Mylanta\n- Diare: Oralit, Attapulgite, atau Loperamide\n\nSegera ke dokter jika:\n- Nyeri hebat dan terus menerus\n- Muntah darah atau BAB berdarah\n- Perut kaku seperti papan"
+            ]
+        },
+        {
+            "tag": "diare",
+            "patterns": [
+                "diare",
+                "mencret",
+                "BAB cair",
+                "buang air besar terus",
+                "perut mulas BAB cair",
+                "sakit perut diare",
+                "berak cair",
+                "sering ke toilet",
+                "perut keroncongan"
+            ],
+            "responses": [
+                "Penanganan diare:\n1. Minum oralit atau larutan gula garam\n2. Hindari susu dan makanan berminyak\n3. Makan bubur atau nasi tim\n4. Jaga kebersihan tangan\n\nObat diare:\n- Oralit (setiap BAB cair)\n- Zinc 20mg (1x sehari, 10 hari)\n- Attapulgite atau Norit (pengikat toksin)\n- Loperamide (hanya untuk dewasa, 2mg per BAB cair, max 8mg/hari)\n\nSegera ke dokter jika:\n- Diare >3 hari\n- Dehidrasi berat (lemas, bibir kering, jarang kencing)\n- BAB berdarah atau lendir banyak"
+            ]
+        },
+        {
+            "tag": "sembelit",
+            "patterns": [
+                "sembelit",
+                "susah BAB",
+                "konstipasi",
+                "sulit buang air besar",
+                "BAB keras",
+                "tidak bisa BAB",
+                "perut penuh",
+                "BAB tidak lancar"
+            ],
+            "responses": [
+                "Penanganan sembelit (konstipasi):\n1. Minum air putih minimal 8 gelas/hari\n2. Konsumsi makanan tinggi serat (sayur, buah, oat)\n3. Olahraga teratur\n4. Jangan menahan BAB\n5. Biasakan BAB teratur setiap pagi\n\nObat pencahar:\n- Serat: Psyllium husk (Metamucil)\n- Pelunak tinja: Dulcolax suppositoria\n- Laksatif osmotik: Lactulose, Microlax\n\nKonsultasi dokter jika:\n- Sembelit >1 minggu\n- Disertai nyeri perut hebat\n- BAB berdarah\n- Penurunan berat badan"
+            ]
+        },
+        {
+            "tag": "mual_muntah",
+            "patterns": [
+                "mual",
+                "muntah",
+                "mau muntah",
+                "eneg",
+                "perut mual",
+                "morning sickness",
+                "mabuk perjalanan",
+                "mabuk kendaraan"
+            ],
+            "responses": [
+                "Penanganan mual dan muntah:\n1. Makan porsi kecil tapi sering\n2. Hindari makanan berminyak dan berbau menyengat\n3. Minum jahe hangat atau permen jahe\n4. Istirahat dengan posisi kepala lebih tinggi\n5. Hindari berbaring setelah makan\n\nObat anti mual:\n- Domperidone 10mg (3x sehari sebelum makan)\n- Ondansetron 4-8mg (untuk mual berat)\n- Antasida jika disertai maag\n- Dimenhydrinate (untuk mabuk perjalanan)\n\nKe dokter jika:\n- Muntah terus menerus >24 jam\n- Tidak bisa minum sama sekali\n- Muntah darah atau hijau\n- Tanda dehidrasi"
+            ]
+        },
+        {
+            "tag": "asam_lambung",
+            "patterns": [
+                "asam lambung",
+                "maag",
+                "gerd",
+                "perut perih",
+                "ulu hati sakit",
+                "nyeri ulu hati",
+                "lambung naik",
+                "asam lambung naik",
+                "heartburn",
+                "refluks",
+                "sendawa asam"
+            ],
+            "responses": [
+                "Penanganan asam lambung/GERD:\n1. Hindari makanan pedas, asam, kopi, cokelat\n2. Makan teratur, porsi kecil tapi sering\n3. Tidur dengan posisi kepala lebih tinggi\n4. Hindari makan 2-3 jam sebelum tidur\n5. Kurangi stress\n\nObat yang direkomendasikan:\n- Antasida (Promag, Mylanta) untuk redakan cepat\n- Omeprazole 20mg (1x sehari pagi sebelum makan)\n- Lansoprazole 30mg (1x sehari)\n- Ranitidine 150mg (2x sehari)\n\nKonsultasi dokter jika keluhan >2 minggu atau muntah darah."
+            ]
+        },
+        {
+            "tag": "masuk_angin",
+            "patterns": [
+                "masuk angin",
+                "perut kembung",
+                "badan tidak enak",
+                "merasa tidak enak badan",
+                "keringat dingin",
+                "mual pusing",
+                "begah",
+                "angin duduk"
+            ],
+            "responses": [
+                "Penanganan masuk angin:\n1. Istirahat yang cukup\n2. Minum air hangat (jahe, teh hangat)\n3. Makan makanan hangat dan mudah dicerna\n4. Pijat atau kerokan ringan\n5. Mandi air hangat\n\nObat yang bisa membantu:\n- Minyak angin (Tolak Angin, Antangin)\n- Obat masuk angin herbal\n- Simetikon untuk kembung\n- Jahe atau wedang jahe\n\nKe dokter jika:\n- Disertai demam tinggi\n- Nyeri dada (bisa jadi masalah jantung)\n- Sesak napas\n- Tidak membaik dalam 2-3 hari"
+            ]
+        },
+        {
+            "tag": "alergi",
+            "patterns": [
+                "alergi",
+                "gatal gatal",
+                "bentol bentol",
+                "biduran",
+                "kaligata",
+                "kulit gatal",
+                "ruam merah",
+                "urtikaria",
+                "alergi makanan",
+                "alergi obat",
+                "alergi debu",
+                "bersin alergi"
+            ],
+            "responses": [
+                "Penanganan alergi:\n1. Hindari pencetus alergi (makanan, debu, dll)\n2. Jangan menggaruk area gatal\n3. Kompres dingin untuk meredakan gatal\n4. Gunakan sabun hypoallergenic\n\nObat alergi:\n- Antihistamin: CTM 4mg (3x sehari), Cetirizine 10mg (1x sehari), Loratadine 10mg (1x sehari)\n- Salep: Hydrocortisone 1% atau Calamine lotion\n\nSegera ke IGD jika:\n- Sesak napas atau bengkak di wajah/tenggorokan\n- Alergi berat (anafilaksis)\n- Gatal di seluruh tubuh dengan pembengkakan"
+            ]
+        },
+        {
+            "tag": "luka_ringan",
+            "patterns": [
+                "luka",
+                "terluka",
+                "berdarah",
+                "luka gores",
+                "lecet",
+                "tersayat",
+                "tergores",
+                "luka bakar ringan",
+                "luka kena pisau",
+                "jatuh lecet"
+            ],
+            "responses": [
+                "Penanganan luka ringan:\n1. Cuci tangan dengan sabun\n2. Bersihkan luka dengan air mengalir\n3. Bersihkan dengan antiseptik (Povidone iodine/Betadine)\n4. Tutup dengan plester atau perban steril\n5. Ganti perban setiap hari\n\nObat yang digunakan:\n- Antiseptik: Betadine, Alkohol 70%\n- Antibiotik topikal: Bioplacenton, Gentamicin salep\n- Jika perlu: Paracetamol untuk nyeri\n\nKe dokter jika:\n- Luka dalam atau lebar >2cm\n- Luka kotor atau terkena benda berkarat\n- Tanda infeksi (bengkak, nanah, kemerahan meluas)"
+            ]
+        },
+        {
+            "tag": "nyeri_otot",
+            "patterns": [
+                "pegal linu",
+                "nyeri otot",
+                "otot pegal",
+                "badan pegal",
+                "encok",
+                "keseleo",
+                "otot tegang",
+                "kram otot",
+                "terkilir",
+                "nyeri punggung",
+                "sakit pinggang"
+            ],
+            "responses": [
+                "Penanganan nyeri otot:\n1. Istirahat area yang nyeri\n2. Kompres dingin (24 jam pertama) lalu kompres hangat\n3. Pijat lembut\n4. Peregangan ringan\n\nObat yang bisa digunakan:\n- Oral: Ibuprofen 400mg (3x sehari), Paracetamol 500mg\n- Topikal: Voltaren gel, Counterpain, Salep Otot\n- Vitamin: Neurobion (B1, B6, B12)\n\nKonsultasi dokter jika:\n- Nyeri hebat atau bengkak signifikan\n- Tidak membaik dalam 1 minggu\n- Disertai demam atau kemerahan"
+            ]
+        },
+        {
+            "tag": "insomnia",
+            "patterns": [
+                "susah tidur",
+                "insomnia",
+                "tidak bisa tidur",
+                "sulit tidur",
+                "gangguan tidur",
+                "sering terbangun",
+                "tidur tidak nyenyak",
+                "kurang tidur",
+                "gelisah malam hari"
+            ],
+            "responses": [
+                "Tips mengatasi insomnia:\n1. Tidur dan bangun di jam yang sama\n2. Hindari kafein 6 jam sebelum tidur\n3. Hindari gadget 1 jam sebelum tidur\n4. Buat kamar nyaman (gelap, sejuk, tenang)\n5. Relaksasi atau meditasi sebelum tidur\n6. Olahraga teratur (tidak dekat waktu tidur)\n\nSuplemen yang bisa membantu:\n- Melatonin 3mg (30 menit sebelum tidur)\n- Magnesium\n- Herbal: Valerian root, chamomile tea\n\nHindari obat tidur tanpa resep dokter. Konsultasi dokter jika insomnia >3 minggu."
+            ]
+        },
+        {
+            "tag": "stress_cemas",
+            "patterns": [
+                "stress",
+                "cemas",
+                "gelisah",
+                "anxiety",
+                "khawatir berlebihan",
+                "panik",
+                "takut berlebihan",
+                "tegang",
+                "overthinking"
+            ],
+            "responses": [
+                "Tips mengelola stress dan kecemasan:\n1. Tarik napas dalam 4-7-8 (tarik 4 detik, tahan 7, buang 8)\n2. Olahraga teratur 30 menit/hari\n3. Tidur cukup 7-8 jam\n4. Batasi kafein dan alkohol\n5. Curhat dengan orang terdekat\n6. Meditasi atau yoga\n7. Kurangi berita negatif\n\nSuplemen pendukung:\n- Vitamin B kompleks\n- Magnesium\n- Omega-3\n- Teh chamomile\n\nKonsultasi psikolog/psikiater jika:\n- Mengganggu aktivitas sehari-hari\n- Berlangsung >2 minggu\n- Disertai pikiran menyakiti diri sendiri\n- Serangan panik berulang\n\nHotline kesehatan jiwa: 119 ext 8"
+            ]
+        },
+        {
+            "tag": "vertigo",
+            "patterns": [
+                "vertigo",
+                "kepala berputar",
+                "pusing berputar",
+                "dunia berputar",
+                "kliyengan",
+                "sempoyongan",
+                "tidak seimbang"
+            ],
+            "responses": [
+                "Penanganan vertigo:\n1. Duduk atau berbaring segera saat serangan\n2. Hindari gerakan kepala mendadak\n3. Fokus pada satu titik diam\n4. Hindari membaca atau melihat layar\n5. Manuver Epley (bisa dipandu dokter)\n\nObat vertigo:\n- Betahistine 8-16mg (3x sehari)\n- Flunarizine 5-10mg (1x sehari malam)\n- Dimenhydrinate untuk mual\n\nKe dokter jika:\n- Vertigo berulang atau berat\n- Disertai gangguan pendengaran\n- Telinga berdenging\n- Mual muntah hebat\n- Kelemahan anggota gerak"
+            ]
+        },
+        {
+            "tag": "infeksi_saluran_kemih",
+            "patterns": [
+                "anyang anyangan",
+                "ISK",
+                "infeksi saluran kemih",
+                "sakit saat kencing",
+                "sering kencing",
+                "kencing sakit",
+                "kencing perih",
+                "kencing tidak tuntas"
+            ],
+            "responses": [
+                "Gejala Infeksi Saluran Kemih (ISK):\n- Sering buang air kecil\n- Nyeri/perih saat kencing\n- Kencing tidak tuntas\n- Urin keruh atau berbau\n- Nyeri perut bawah\n- Demam (jika infeksi berat)\n\nPenanganan awal:\n1. Minum air putih minimal 2-3 liter/hari\n2. Jangan menahan kencing\n3. Bersihkan area kemaluan dengan benar\n4. Hindari sabun beraroma kuat\n\nObat (HARUS KE DOKTER untuk antibiotik):\n- Antibiotik: Ciprofloxacin, Cotrimoxazole\n- Pereda nyeri: Paracetamol\n\nPENCEGAHAN:\n- Minum cukup air\n- Kencing setelah hubungan seksual\n- Bersihkan dari depan ke belakang\n\nSEGERA ke dokter karena ISK butuh antibiotik!"
+            ]
+        },
+        {
+            "tag": "hipertensi",
+            "patterns": [
+                "darah tinggi",
+                "hipertensi",
+                "tekanan darah tinggi",
+                "tensi tinggi",
+                "darah tinggi naik",
+                "tensi naik"
+            ],
+            "responses": [
+                "Pengelolaan hipertensi:\n1. Kurangi garam (<5g/hari)\n2. Diet sehat (banyak sayur, buah, kurangi lemak)\n3. Olahraga teratur 30 menit/hari\n4. Jaga berat badan ideal\n5. Hindari rokok dan alkohol\n6. Kelola stress\n7. Cek tekanan darah rutin\n\nObat hipertensi (HARUS RESEP DOKTER):\n- Amlodipine 5-10mg\n- Candesartan 8-16mg\n- Captopril 25-50mg\n- HCT (Hidroklorotiazid)\n\nSEGERA KE IGD jika:\n- Tekanan darah >180/120 mmHg\n- Nyeri dada, sesak, sakit kepala hebat\n- Pandangan kabur mendadak\n\nPENTING: Hipertensi butuh pengobatan jangka panjang dan kontrol rutin ke dokter!"
+            ]
+        },
+        {
+            "tag": "diabetes",
+            "patterns": [
+                "diabetes",
+                "kencing manis",
+                "gula darah tinggi",
+                "diabete",
+                "DM",
+                "diabetes melitus",
+                "gula darah naik"
+            ],
+            "responses": [
+                "Pengelolaan diabetes:\n1. Diet rendah gula dan karbohidrat sederhana\n2. Konsumsi karbohidrat kompleks (nasi merah, oat)\n3. Tingkatkan serat (sayur, buah)\n4. Olahraga teratur 150 menit/minggu\n5. Cek gula darah rutin\n6. Jaga kebersihan kaki\n\nObat diabetes (HARUS RESEP DOKTER):\n- Metformin 500-1000mg\n- Glimepiride 1-4mg\n- Insulin (jika diperlukan)\n\nTarget gula darah:\n- Puasa: <100 mg/dL\n- 2 jam setelah makan: <140 mg/dL\n- HbA1c: <7%\n\nSEGERA KE IGD jika:\n- Gula darah <70 atau >300 mg/dL\n- Lemas berat, berkeringat dingin (hipoglikemia)\n- Haus terus, sering kencing, napas bau keton\n\nPENTING: Diabetes perlu kontrol ketat dan pemeriksaan rutin!"
+            ]
+        },
+        {
+            "tag": "asma",
+            "patterns": [
+                "asma",
+                "sesak napas",
+                "napas pendek",
+                "bengek",
+                "mengi",
+                "sulit bernapas",
+                "asthma",
+                "napas bunyi"
+            ],
+            "responses": [
+                "Pengelolaan asma:\n1. Hindari pencetus (debu, asap, udara dingin, stress)\n2. Gunakan masker saat keluar\n3. Jaga kebersihan rumah\n4. Olahraga sesuai kemampuan\n\nObat asma (HARUS RESEP DOKTER):\nController (jangka panjang):\n- Kortikosteroid inhalasi (Budesonide, Fluticasone)\n- Long-acting beta agonist (Salmeterol)\n\nReliever (serangan akut):\n- Short-acting beta agonist: Salbutamol inhaler\n- Nebulizer salbutamol + ipratropium\n\nSEGERA KE IGD jika:\n- Sesak berat tidak membaik dengan inhaler\n- Bibir/kuku membiru\n- Tidak bisa bicara lengkap\n- Napas sangat cepat\n- Kesadaran menurun\n\nPENTING: Asma perlu pengobatan teratur dan selalu bawa inhaler!"
+            ]
+        },
+        {
+            "tag": "kolesterol",
+            "patterns": [
+                "kolesterol tinggi",
+                "kolesterol",
+                "lemak darah tinggi",
+                "trigliserida tinggi",
+                "dislipidemia",
+                "kolesterol naik"
+            ],
+            "responses": [
+                "Pengelolaan kolesterol tinggi:\n1. Kurangi lemak jenuh (gorengan, jeroan, santan kental)\n2. Tingkatkan serat (oat, kacang-kacangan, sayur)\n3. Konsumsi ikan berlemak (salmon, sarden)\n4. Olahraga aerobik 30 menit, 5x/minggu\n5. Jaga berat badan ideal\n6. Hindari rokok\n\nObat kolesterol (HARUS RESEP DOKTER):\n- Statin: Simvastatin 10-40mg, Atorvastatin 10-80mg\n- Fibrate: Gemfibrozil (untuk trigliserida tinggi)\n\nTarget:\n- Kolesterol total: <200 mg/dL\n- LDL: <100 mg/dL\n- HDL: >40 mg/dL (pria), >50 mg/dL (wanita)\n- Trigliserida: <150 mg/dL\n\nKontrol rutin setiap 3-6 bulan untuk evaluasi dan cek fungsi hati."
+            ]
+        },
+        {
+            "tag": "anemia",
+            "patterns": [
+                "anemia",
+                "kurang darah",
+                "lemas terus",
+                "pucat",
+                "pusing dan lemas",
+                "cepat lelah",
+                "HB rendah",
+                "hemoglobin rendah"
+            ],
+            "responses": [
+                "Penanganan anemia:\n1. Konsumsi makanan kaya zat besi:\n   - Daging merah, hati, ikan\n   - Bayam, kangkung, brokoli\n   - Kacang-kacangan\n2. Vitamin C untuk meningkatkan penyerapan zat besi\n3. Hindari teh/kopi saat makan (menghambat penyerapan Fe)\n\nSuplemen zat besi:\n- Tablet Fe sulfat 200mg (1-2x sehari)\n- Sangobion, Maltofer\n- Diminum dengan vitamin C atau jus jeruk\n\nEfek samping: BAB hitam, mual (normal)\n\nKonsultasi dokter jika:\n- Anemia berat (Hb <8 g/dL)\n- Lemas sangat berat\n- Pucat, sesak napas\n- Tidak membaik setelah 2 bulan terapi\n\nPerlu cek penyebab: kekurangan Fe, B12, asam folat, atau perdarahan."
+            ]
+        },
+        {
+            "tag": "mata_merah",
+            "patterns": [
+                "mata merah",
+                "mata gatal",
+                "konjungtivitis",
+                "mata perih",
+                "mata berair",
+                "belekan",
+                "mata iritasi",
+                "mata bengkak"
+            ],
+            "responses": [
+                "Penanganan mata merah:\n1. Jangan mengucek mata\n2. Kompres dingin\n3. Cuci tangan sebelum menyentuh mata\n4. Hindari lensa kontak sementara\n5. Hindari makeup mata\n\nObat tetes mata:\n- Iritasi ringan: Insto, Cendo Xitrol\n- Alergi: Tetes mata antihistamin\n- Mata kering: Air mata buatan (Cendo Lyteers)\n\nKe dokter mata jika:\n- Nyeri mata hebat\n- Pandangan kabur\n- Sensitif cahaya\n- Keluar nanah/kotoran banyak\n- Tidak membaik 2-3 hari\n- Ada riwayat trauma/kemasukan benda"
+            ]
+        },
+        {
+            "tag": "jerawat",
+            "patterns": [
+                "jerawat",
+                "berjerawat",
+                "acne",
+                "wajah berjerawat",
+                "jerawat meradang",
+                "komedo",
+                "bruntusan"
+            ],
+            "responses": [
+                "Perawatan jerawat:\n1. Cuci muka 2x sehari dengan sabun lembut\n2. Hindari memencet jerawat\n3. Gunakan pelembab non-comedogenic\n4. Hindari makeup tebal\n5. Ganti sarung bantal rutin\n6. Kurangi makanan berminyak dan tinggi gula\n\nObat jerawat ringan-sedang:\n- Topikal: Benzoyl peroxide 2.5-5%, Clindamycin gel\n- Oral (ringan): Zinc 20mg\n- Oral (sedang-berat, RESEP DOKTER): Doxycycline 100mg, Isotretinoin\n\nKe dokter kulit jika:\n- Jerawat meradang atau bernanah banyak\n- Meninggalkan bekas gelap/lubang\n- Tidak membaik dengan perawatan OTC\n\nPENTING: Hindari penggunaan steroid tanpa resep (bisa memperparah)!"
+            ]
+        },
+        {
+            "tag": "gigi_sakit",
+            "patterns": [
+                "sakit gigi",
+                "gigi sakit",
+                "gigi berlubang",
+                "gigi ngilu",
+                "gusi bengkak",
+                "sakit di gigi",
+                "gigi sensitif"
+            ],
+            "responses": [
+                "Penanganan sakit gigi sementara:\n1. Kumur air garam hangat\n2. Sikat gigi lembut setelah makan\n3. Hindari makanan/minuman panas, dingin, manis\n4. Kompres dingin di pipi (jika bengkak)\n\nObat sakit gigi:\n- Pereda nyeri: Ibuprofen 400mg atau Paracetamol 500mg (3x sehari)\n- Obat kumur: Chlorhexidine 0.2%\n- Jika infeksi (RESEP DOKTER): Amoxicillin 500mg (3x sehari, 5-7 hari)\n\nSEGERA KE DOKTER GIGI:\n- Semua sakit gigi perlu pemeriksaan dokter gigi\n- Jika bengkak ke wajah\n- Demam\n- Nyeri sangat hebat\n- Gusi bernanah\n\nPencegahan: Sikat gigi 2x sehari, flossing, periksa gigi rutin 6 bulan sekali."
+            ]
+        },
+        {
+            "tag": "sariawan",
+            "patterns": [
+                "sariawan",
+                "luka di mulut",
+                "bibir luka",
+                "mulut perih",
+                "stomatitis",
+                "luka di lidah",
+                "gusi luka"
+            ],
+            "responses": [
+                "Penanganan sariawan:\n1. Kumur air garam hangat 3x sehari\n2. Hindari makanan pedas, asam, dan panas\n3. Konsumsi makanan lembut\n4. Jaga kebersihan mulut\n5. Konsumsi vitamin C dan B kompleks\n\nObat sariawan:\n- Topikal: Albothyl (sekali oles), Kenalog in Orabase\n- Obat kumur: Betadine gargle\n- Vitamin: B12, Zinc, Asam folat\n\nKe dokter jika:\n- Sariawan tidak sembuh >2 minggu\n- Sariawan sangat besar atau banyak\n- Disertai demam\n- Sulit makan/minum\n- Sering kambuh (>3x sebulan)"
+            ]
+        },
+        {
+            "tag": "telinga_sakit",
+            "patterns": [
+                "sakit telinga",
+                "telinga sakit",
+                "telinga berdengung",
+                "telinga berdenging",
+                "congek",
+                "telinga berair",
+                "telinga tersumbat"
+            ],
+            "responses": [
+                "Penanganan masalah telinga:\n\n1. Telinga tersumbat (kotoran):\n- Teteskan minyak zaitun/baby oil 2-3 tetes\n- Jangan korek dengan cotton bud ke dalam\n- Bersihkan ke dokter THT\n\n2. Nyeri telinga:\n- Kompres hangat di luar telinga\n- Pereda nyeri: Paracetamol\n- JANGAN teteskan obat sembarangan\n\n3. Telinga berdenging (tinnitus):\n- Hindari suara keras\n- Kurangi kafein\n- Kelola stress\n\nSEGERA ke dokter THT jika:\n- Nyeri hebat\n- Keluar cairan/nanah\n- Demam\n- Gangguan pendengaran\n- Pusing berputar"
+            ]
+        },
+        {
+            "tag": "keracunan_makanan",
+            "patterns": [
+                "keracunan",
+                "keracunan makanan",
+                "makan makanan basi",
+                "food poisoning",
+                "mual muntah diare",
+                "perut sakit setelah makan"
+            ],
+            "responses": [
+                "Penanganan keracunan makanan:\n1. Hentikan konsumsi makanan yang dicurigai\n2. Minum oralit untuk mencegah dehidrasi\n3. Istirahat total\n4. Makan makanan ringan (bubur, roti tawar)\n5. Jangan minum obat anti diare dulu (biarkan toksin keluar)\n\nObat pendukung:\n- Oralit atau air kelapa\n- Attapulgite (pengikat toksin)\n- Domperidone untuk mual\n\nSEGERA KE IGD jika:\n- Muntah/diare terus menerus >6 jam\n- Demam tinggi >39°C\n- BAB berdarah\n- Tanda dehidrasi berat\n- Kesadaran menurun\n- Dicurigai keracunan jamur/bahan kimia\n\nPencegahan:\n- Cuci tangan sebelum makan\n- Masak makanan hingga matang\n- Simpan makanan di suhu tepat"
+            ]
+        },
+        {
+            "tag": "stroke",
+            "patterns": [
+                "stroke",
+                "serangan stroke",
+                "gejala stroke",
+                "wajah perot",
+                "tangan lemas sebelah",
+                "pelo mendadak"
+            ],
+            "responses": [
+                "STROKE ADALAH KEGAWATDARURATAN MEDIS!\n\nKenali gejala FAST:\nF (Face/Wajah): Senyum tidak simetris, wajah mencong\nA (Arms/Lengan): Salah satu lengan lemah/tidak bisa diangkat\nS (Speech/Bicara): Bicara pelo atau tidak jelas\nT (Time/Waktu): SEGERA KE IGD dalam golden period 3-4.5 jam!\n\nGejala lain:\n- Mendadak bingung\n- Pandangan kabur pada satu atau kedua mata\n- Kesulitan berjalan, pusing, kehilangan keseimbangan\n- Sakit kepala hebat tanpa sebab jelas\n\nJANGAN:\n- Menunggu gejala hilang sendiri\n- Memberikan makan/minum\n- Memijat atau menusuk jari\n\nPENTING: Stroke perlu penanganan segera di rumah sakit untuk mencegah kecacatan permanen atau kematian!\n\nFaktor risiko: hipertensi, diabetes, kolesterol, merokok, obesitas - kontrol semua faktor risiko!"
+            ]
+        },
+        {
+            "tag": "serangan_jantung",
+            "patterns": [
+                "serangan jantung",
+                "nyeri dada",
+                "dada sakit",
+                "jantung sakit",
+                "sesak dada",
+                "heart attack",
+                "dada terasa berat"
+            ],
+            "responses": [
+                "SERANGAN JANTUNG ADALAH KEGAWATDARURATAN!\n\nGejala serangan jantung:\n- Nyeri dada seperti tertimpa benda berat/diremas\n- Nyeri menjalar ke lengan kiri, rahang, punggung\n- Sesak napas\n- Keringat dingin\n- Mual, muntah\n- Pusing atau pingsan\n\nTINDAKAN DARURAT:\n1. Segera hubungi ambulans 119\n2. Dudukkan atau baringkan dengan kepala agak tinggi\n3. Longgarkan pakaian\n4. Jika ada riwayat: berikan aspirin 300mg (dikunyah)\n5. Jika tersedia: nitrogliserin sublingual\n6. Jangan tinggalkan penderita sendirian\n7. Siap lakukan RJP jika pingsan\n\nJANGAN TUNDA!\nWaktu adalah otot jantung - setiap menit penting!\n\nFaktor risiko: hipertensi, diabetes, kolesterol, merokok, obesitas, stress, riwayat keluarga - KONTROL SEMUA FAKTOR RISIKO!"
+            ]
+        },
+        {
+            "tag": "demam_berdarah",
+            "patterns": [
+                "demam berdarah",
+                "DBD",
+                "dengue",
+                "digigit nyamuk demam",
+                "demam tinggi mendadak",
+                "trombosit turun"
+            ],
+            "responses": [
+                "Gejala Demam Berdarah Dengue (DBD):\n- Demam tinggi mendadak (39-40°C) 2-7 hari\n- Nyeri kepala hebat\n- Nyeri belakang bola mata\n- Nyeri otot dan sendi\n- Mual, muntah\n- Ruam kemerahan\n- Mimisan atau gusi berdarah (fase kritis)\n\nTanda BAHAYA (segera ke IGD):\n- Nyeri perut hebat\n- Muntah terus menerus\n- Mimisan/gusi berdarah\n- BAB hitam\n- Lemas sekali, gelisah\n- Tangan kaki dingin, berkeringat\n- Sesak napas\n\nPenanganan:\n- Banyak minum (air, jus, oralit)\n- Istirahat total\n- Kompres hangat\n- Penurun panas: Paracetamol (JANGAN Aspirin/Ibuprofen!)\n- Monitor suhu dan trombosit\n\nPERIKSA KE DOKTER/RS untuk:\n- Pemeriksaan darah lengkap\n- Monitor trombosit dan hematokrit\n- Infus jika perlu\n\nPencegahan: 3M Plus (Menguras, Menutup, Mengubur, plus abate dan fogging)."
+            ]
+        },
+        {
+            "tag": "covid19",
+            "patterns": [
+                "covid",
+                "corona",
+                "covid-19",
+                "coronavirus",
+                "terinfeksi covid",
+                "positif covid"
+            ],
+            "responses": [
+                "Gejala COVID-19:\nRingan-Sedang:\n- Demam >37.5°C\n- Batuk kering\n- Pilek, hidung tersumbat\n- Hilang penciuman/perasa\n- Sakit tenggorokan\n- Sakit kepala\n- Lemas, nyeri otot\n\nBerat (SEGERA KE RS):\n- Sesak napas\n- Nyeri dada\n- Saturasi oksigen <95%\n- Bibir/wajah membiru\n- Bingung atau sulit dibangunkan\n\nPenanganan mandiri (gejala ringan):\n1. Isolasi mandiri 5-10 hari\n2. Istirahat cukup\n3. Minum banyak air hangat\n4. Obat:\n   - Paracetamol untuk demam\n   - Vitamin C, D, Zinc\n   - Antiviral (RESEP DOKTER): Molnupiravir, Paxlovid\n5. Monitor saturasi oksigen dengan oximeter\n6. Makan bergizi\n\nKapan ke RS:\n- Sesak napas\n- Saturasi <95%\n- Demam >3 hari tidak turun\n- Komorbid (diabetes, jantung, dll)\n\nPencegahan:\n- Vaksinasi lengkap + booster\n- Masker di keramaian\n- Cuci tangan\n- Jaga jarak\n- Ventilasi baik"
+            ]
+        },
+        {
+            "tag": "tifus",
+            "patterns": [
+                "tifus",
+                "tipes",
+                "demam tifoid",
+                "typhoid",
+                "demam terus menerus"
+            ],
+            "responses": [
+                "Gejala Tifus (Demam Tifoid):\n- Demam tinggi bertahap, lebih tinggi sore/malam (minggu 1-2)\n- Demam naik turun (dapat >1 minggu)\n- Sakit kepala\n- Lemas sangat\n- Nyeri perut\n- Lidah kotor (putih tengah, pinggir merah)\n- Diare atau konstipasi\n- Mual, muntah\n- Pembesaran limpa/hati\n\nDiagnosis: Tes Widal, kultur darah, atau rapid test\n\nPengobatan (HARUS KE DOKTER):\n- Antibiotik: Chloramphenicol, Ciprofloxacin, atau Ceftriaxone (harus habis 10-14 hari)\n- Istirahat total\n- Diet lunak, mudah dicerna\n- Minum banyak cairan\n\nPencegahan:\n- Cuci tangan sebelum makan\n- Konsumsi makanan matang dan air bersih\n- Vaksinasi tifoid\n- Hindari jajan sembarangan\n\nKOMPLIKASI jika tidak diobati: Perforasi usus, perdarahan saluran cerna (FATAL!)"
+            ]
+        },
+        {
+            "tag": "cacar_air",
+            "patterns": [
+                "cacar air",
+                "cacar",
+                "chickenpox",
+                "bintik merah berair",
+                "varicella"
+            ],
+            "responses": [
+                "Gejala Cacar Air (Varicella):\n- Demam ringan\n- Lemas, tidak napsu makan\n- Ruam merah → bintik berair → keropeng\n- Gatal\n- Muncul bertahap di seluruh tubuh\n\nPenanganan:\n1. Istirahat di rumah (menular!)\n2. Isolasi sampai semua lenting mengering\n3. Jangan menggaruk (cegah infeksi sekunder)\n4. Potong kuku pendek\n5. Mandi dengan air hangat biasa\n6. Pakai baju longgar dan katun\n\nObat:\n- Penurun panas: Paracetamol (JANGAN Aspirin!)\n- Antigatal: Bedak calamine, CTM\n- Antivirus (RESEP DOKTER): Acyclovir (efektif jika dimulai 24-72 jam awal)\n\nKe dokter jika:\n- Anak <1 tahun atau dewasa\n- Ibu hamil\n- Daya tahan tubuh rendah\n- Demam tinggi berkepanjangan\n- Lenting terinfeksi (nanah)"
+            ]
+        },
+        {
+            "tag": "vitamin_suplemen",
+            "patterns": [
+                "vitamin apa yang bagus",
+                "suplemen kesehatan",
+                "vitamin untuk daya tahan tubuh",
+                "multivitamin",
+                "vitamin untuk lelah",
+                "suplemen untuk stamina"
+            ],
+            "responses": [
+                "Rekomendasi vitamin dan suplemen umum:\n\n1. Daya Tahan Tubuh:\n- Vitamin C 500-1000mg\n- Vitamin D3 1000-2000 IU\n- Zinc 15-30mg\n- Echinacea\n\n2. Lelah & Stamina:\n- Vitamin B kompleks\n- Zat besi (jika anemia)\n- Ginseng\n- Omega-3\n\n3. Kesehatan Tulang:\n- Kalsium 500-1000mg\n- Vitamin D3\n- Magnesium\n\n4. Kesehatan Mata:\n- Vitamin A\n- Lutein & Zeaxanthin\n- Omega-3\n\n5. Kulit & Rambut:\n- Vitamin E\n- Biotin\n- Kolagen\n\nTips:\n- Lebih baik dari makanan alami\n- Jangan overdosis\n- Konsultasi dokter jika punya penyakit kronis\n- Baca aturan pakai"
+            ]
+        },
+        {
+            "tag": "kehamilan",
+            "patterns": [
+                "hamil",
+                "tanda hamil",
+                "gejala kehamilan",
+                "obat untuk ibu hamil",
+                "aman untuk ibu hamil",
+                "morning sickness kehamilan"
+            ],
+            "responses": [
+                "Informasi seputar kehamilan:\n\nTanda awal kehamilan:\n- Telat haid\n- Mual muntah (morning sickness)\n- Payudara sensitif\n- Mudah lelah\n- Sering buang air kecil\n\nVitamin penting saat hamil:\n- Asam folat 400-800mcg (cegah cacat tabung saraf)\n- Zat besi (cegah anemia)\n- Kalsium & Vitamin D\n- DHA/Omega-3\n\nMornig sickness:\n- Makan sedikit-sedikit tapi sering\n- Hindari makanan berminyak\n- Jahe atau permen jahe\n- Vitamin B6 (dengan resep)\n\nOBAT YANG HARUS DIHINDARI:\n- Ibuprofen\n- Aspirin\n- Antibiotik tertentu\n- Vitamin A dosis tinggi\n\nPENTING: Selalu konsultasi dokter kandungan sebelum minum obat apapun saat hamil!"
+            ]
+        },
+        {
+            "tag": "anak_sakit",
+            "patterns": [
+                "anak sakit",
+                "bayi sakit",
+                "anak demam",
+                "obat untuk anak",
+                "dosis anak",
+                "anak batuk pilek"
+            ],
+            "responses": [
+                "Panduan penanganan anak sakit:\n\n1. Demam anak:\n- Paracetamol sirup: 10-15mg/kg BB, 4-6 jam sekali\n- Ibuprofen sirup: 5-10mg/kg BB (>6 bulan)\n- Kompres hangat\n- Banyak minum\n\n2. Batuk pilek anak:\n- Banyak minum air hangat\n- Uap/inhalasi dengan air hangat\n- Madu (>1 tahun)\n- Hindari obat batuk dewasa!\n\nDosis berdasarkan BERAT BADAN, bukan umur!\n\nSEGERA ke dokter/IGD jika anak:\n- Usia <3 bulan dengan demam\n- Demam >39°C tidak turun\n- Tidak mau minum\n- Sesak napas\n- Kejang\n- Lemas/sulit dibangunkan\n- Muntah terus menerus\n- Ruam yang tidak hilang saat ditekan\n\nPENTING: Jangan berikan obat dewasa pada anak tanpa petunjuk dokter!"
+            ]
+        },
+        {
+            "tag": "jam_operasional",
+            "patterns": [
+                "jam buka",
+                "jam operasional",
+                "kapan bisa konsultasi",
+                "24 jam",
+                "layanan darurat"
+            ],
+            "responses": [
+                "Informasi layanan:\n\nChatbot ini tersedia 24 jam untuk memberikan informasi kesehatan umum.\n\nUntuk kondisi DARURAT, segera hubungi:\n- IGD Rumah Sakit terdekat\n- Ambulans: 119\n- Hotline kesehatan: 119 ext 8\n\nUntuk konsultasi dokter:\n- Kunjungi Puskesmas/Klinik pada jam kerja\n- Gunakan layanan telemedicine\n- Apotek untuk keluhan ringan\n\nCatatan: Chatbot ini bukan pengganti konsultasi dokter. Untuk keluhan serius atau darurat, segera kunjungi fasilitas kesehatan."
+            ]
+        },
+        {
+            "tag": "rujukan_rs",
+            "patterns": [
+                "rumah sakit terdekat",
+                "klinik terdekat",
+                "puskesmas",
+                "harus ke dokter mana",
+                "spesialis apa",
+                "dokter apa yang cocok"
+            ],
+            "responses": [
+                "Panduan memilih layanan kesehatan:\n\n1. Puskesmas/Klinik:\n- Keluhan ringan (flu, diare, luka ringan)\n- Imunisasi, KB, ANC\n- Pemeriksaan rutin\n\n2. Dokter Umum:\n- Keluhan ringan-sedang\n- Rujukan ke spesialis\n\n3. Dokter Spesialis:\n- Penyakit dalam: diabetes, hipertensi, maag kronis\n- THT: telinga, hidung, tenggorokan\n- Mata: gangguan penglihatan\n- Kulit: dermatitis, jerawat parah\n- Kandungan: kehamilan, masalah reproduksi\n- Anak: kesehatan anak\n- Jantung: nyeri dada, hipertensi\n- Saraf: sakit kepala kronis, vertigo\n- Jiwa: gangguan mental, kecemasan berat\n\n4. IGD Rumah Sakit:\n- Kecelakaan\n- Kedaruratan medis\n- Gejala stroke/jantung\n\nCari faskes terdekat di Google Maps atau hubungi 119 untuk informasi."
+            ]
+        }
+    ]
+}
