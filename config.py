@@ -15,4 +15,4 @@ class Config:
     
     CONFIDENCE_THRESHOLD = float(os.getenv('CONFIDENCE_THRESHOLD', 0.35))
     
-    CORS_ORIGINS = os.getenv('CORS_ORIGINS', '*')
+    CORS_ORIGINS = [s.strip() for s in os.getenv('CORS_ORIGINS', '*').split(',') if s.strip()]
