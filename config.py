@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
-    SECRET_KEY = os.getenv('SECRET_KEY', 'chatbot-kesehatan-secret-key-2024')
+    SECRET_KEY = os.getenv('SECRET_KEY', 'default-key-for-dev')
     DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
     
     HOST = os.getenv('HOST', '0.0.0.0')

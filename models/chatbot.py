@@ -3,7 +3,10 @@ import json
 import random
 import joblib
 import numpy as np
+import logging
 from models.preprocessor import get_preprocessor
+
+logger = logging.getLogger(__name__)
 
 
 class HealthChatbot:
@@ -26,6 +29,7 @@ class HealthChatbot:
         metadata_path = os.path.join(self.model_path, 'metadata.json')
         
         if not all(os.path.exists(p) for p in [vectorizer_path, classifier_path, metadata_path]):
+            logger.error(f"Model files not found in {self.model_path}")
             raise FileNotFoundError(
                 f"Model files not found in {self.model_path}. "
                 "Please train the model first using: python train.py"
@@ -40,7 +44,7 @@ class HealthChatbot:
         self.classes = metadata['classes']
         self.responses = metadata['responses']
         
-        print(f"Chatbot loaded: {len(self.classes)} intents")
+        logger.info(f"Chatbot loaded: {len(self.classes)} intents")
     
     def predict_intent(self, text):
         processed = self.preprocessor.preprocess(text)

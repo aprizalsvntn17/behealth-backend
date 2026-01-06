@@ -2,6 +2,7 @@ import json
 import os
 import random
 import joblib
+import logging
 from collections import Counter
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
@@ -12,6 +13,8 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import classification_report, accuracy_score
 
 from models.preprocessor import get_preprocessor
+
+logger = logging.getLogger(__name__)
 
 
 class ChatbotTrainer:
@@ -70,38 +73,35 @@ class ChatbotTrainer:
         return augmented_patterns, augmented_labels
     
     def train(self, classifier_type='logistic', augment=True, test_size=0.2):
-        print("\n" + "="*60)
-        print("TRAINING HEALTH CHATBOT MODEL")
-        print("="*60)
+        logger.info("Starting health chatbot model training")
         
-        print("\n1. Loading dataset...")
+        logger.info("Loading dataset...")
         patterns, labels, responses = self.load_dataset()
-        print(f"   Loaded {len(patterns)} patterns across {len(self.classes)} classes")
+        logger.info(f"Loaded {len(patterns)} patterns across {len(self.classes)} classes")
         
         class_counts = Counter(labels)
-        print(f"\n   Class distribution:")
+        logger.info("Class distribution (top 5):")
         for cls, count in sorted(class_counts.items(), key=lambda x: x[1], reverse=True)[:5]:
-            print(f"   - {cls}: {count} samples")
+            logger.info(f"- {cls}: {count} samples")
         
-        print("\n2. Preprocessing patterns...")
+        logger.info("Preprocessing patterns...")
         processed_patterns = self.preprocessor.preprocess_batch(patterns)
-        print(f"   Preprocessing complete")
         
         if augment:
-            print("\n3. Augmenting data...")
+            logger.info("Augmenting data...")
             processed_patterns, labels = self.augment_data(processed_patterns, labels, augment_factor=1)
-            print(f"   After augmentation: {len(processed_patterns)} samples")
+            logger.info(f"After augmentation: {len(processed_patterns)} samples")
         
-        print("\n4. Splitting data...")
+        logger.info("Splitting data...")
         X_train, X_test, y_train, y_test = train_test_split(
             processed_patterns, labels, 
             test_size=test_size, 
             random_state=42, 
             stratify=labels
         )
-        print(f"   Train: {len(X_train)}, Test: {len(X_test)}")
+        logger.info(f"Train: {len(X_train)}, Test: {len(X_test)}")
         
-        print("\n5. Initializing TF-IDF vectorizer...")
+        logger.info("Initializing TF-IDF vectorizer...")
         self.vectorizer = TfidfVectorizer(
             ngram_range=(1, 2),
             max_features=3000,
@@ -132,38 +132,34 @@ class ChatbotTrainer:
         }
         
         self.classifier = classifiers.get(classifier_type, classifiers['logistic'])
-        print(f"   Using {classifier_type.upper()} classifier")
+        logger.info(f"Using {classifier_type.upper()} classifier")
         
-        print("\n6. Vectorizing text...")
+        logger.info("Vectorizing text...")
         X_train_tfidf = self.vectorizer.fit_transform(X_train)
         X_test_tfidf = self.vectorizer.transform(X_test)
-        print(f"   Feature dimensions: {X_train_tfidf.shape[1]}")
+        logger.info(f"Feature dimensions: {X_train_tfidf.shape[1]}")
         
-        print("\n7. Training classifier...")
+        logger.info("Training classifier...")
         self.classifier.fit(X_train_tfidf, y_train)
-        print("   Training complete")
         
-        print("\n8. Evaluating model...")
+        logger.info("Evaluating model...")
         y_pred = self.classifier.predict(X_test_tfidf)
         accuracy = accuracy_score(y_test, y_pred)
-        print(f"   Test Accuracy: {accuracy:.4f} ({accuracy*100:.2f}%)")
+        logger.info(f"Test Accuracy: {accuracy:.4f} ({accuracy*100:.2f}%)")
         
-        print("\n9. Cross-validation (5-fold)...")
+        logger.info("Running cross-validation (5-fold)...")
         X_all_tfidf = self.vectorizer.transform(processed_patterns)
         cv_scores = cross_val_score(self.classifier, X_all_tfidf, labels, cv=5)
-        print(f"   CV Scores: {[f'{s:.4f}' for s in cv_scores]}")
-        print(f"   Mean CV Score: {cv_scores.mean():.4f} (+/- {cv_scores.std()*2:.4f})")
+        logger.info(f"Mean CV Score: {cv_scores.mean():.4f} (+/- {cv_scores.std()*2:.4f})")
         
-        print("\n10. Classification Report:")
-        print(classification_report(y_test, y_pred, zero_division=0))
+        # Log classification report
+        logger.info("Classification Report:\n" + classification_report(y_test, y_pred, zero_division=0))
         
-        print("\n11. Saving models...")
+        logger.info("Saving models...")
         self.save_models()
-        print(f"    Models saved to: {self.model_path}")
+        logger.info(f"Models saved to: {self.model_path}")
         
-        print("\n" + "="*60)
-        print("TRAINING COMPLETED SUCCESSFULLY")
-        print("="*60)
+        logger.info("Training completed successfully")
         
         return {
             'accuracy': accuracy,

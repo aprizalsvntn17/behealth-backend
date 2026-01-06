@@ -1,5 +1,7 @@
 # ==========================================
-# FILE: ml_model.py (ML Model - IMPROVED TYPE HINTS)
+# FILE: ml_model.py
+# NOTE: This file appears to be a legacy/standalone implementation.
+# The active implementation is in models/
 # ==========================================
 
 import json
@@ -17,7 +19,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 class MLModel:
-    """Class untuk Machine Learning Model (Naive Bayes + TF-IDF)"""
+    """Class for Machine Learning Model (Naive Bayes + TF-IDF)"""
     
     def __init__(self, dataset_path: str = 'datasets.json', model_dir: str = 'models'):
         self.dataset_path = dataset_path
@@ -33,11 +35,11 @@ class MLModel:
         os.makedirs(self.model_dir, exist_ok=True)
     
     def load_dataset(self) -> None:
-        """Load dataset dari JSON"""
+        """Load dataset from JSON"""
         try:
             with open(self.dataset_path, 'r', encoding='utf-8') as f:
                 self.intents_data = json.load(f)
-            logger.info(f"✅ Dataset loaded: {len(self.intents_data['intents'])} intents")
+            logger.info(f"Dataset loaded: {len(self.intents_data['intents'])} intents")
         except FileNotFoundError:
             logger.error(f"Dataset file not found: {self.dataset_path}")
             raise
@@ -46,12 +48,12 @@ class MLModel:
             raise
     
     def prepare_training_data(self) -> Tuple[List[str], List[str]]:
-        """Prepare data untuk training"""
+        """Prepare data for training"""
         X_raw: List[str] = []
         y: List[str] = []
         
         if not self.intents_data:
-            raise ValueError("Dataset belum dimuat")
+            raise ValueError("Dataset not loaded")
         
         for intent in self.intents_data['intents']:
             tag = intent['tag']
@@ -62,9 +64,8 @@ class MLModel:
         return X_raw, y
     
     def train_model(self) -> Tuple[float, str]:
-        """Train Naive Bayes model dengan TF-IDF"""
+        """Train Naive Bayes model with TF-IDF"""
         try:
-            print("\n🔄 Starting training process...")
             logger.info("Training process started")
             
             # Load dataset
@@ -72,15 +73,12 @@ class MLModel:
             
             # Prepare data
             X_raw, y = self.prepare_training_data()
-            print(f"📊 Total samples: {len(X_raw)}")
             logger.info(f"Total training samples: {len(X_raw)}")
             
             # Preprocess
-            print("🔄 Preprocessing texts...")
             X_processed = self.preprocessor.preprocess_batch(X_raw)
             
             # TF-IDF Vectorization
-            print("🔄 Extracting TF-IDF features...")
             self.vectorizer = TfidfVectorizer(
                 max_features=1000,
                 ngram_range=(1, 2),
@@ -95,7 +93,6 @@ class MLModel:
             )
             
             # Train model
-            print("🔄 Training Naive Bayes model...")
             self.model = MultinomialNB(alpha=1.0)
             self.model.fit(X_train, y_train)
             
@@ -104,8 +101,6 @@ class MLModel:
             accuracy = accuracy_score(y_test, y_pred)
             report = classification_report(y_test, y_pred, zero_division=0)
             
-            print(f"\n✅ Training completed!")
-            print(f"📊 Accuracy: {accuracy * 100:.2f}%")
             logger.info(f"Training completed with accuracy: {accuracy * 100:.2f}%")
             
             # Save labels
@@ -121,7 +116,7 @@ class MLModel:
             raise
     
     def save_model(self) -> None:
-        """Save model dan vectorizer"""
+        """Save model and vectorizer"""
         try:
             model_path = os.path.join(self.model_dir, 'model.pkl')
             vectorizer_path = os.path.join(self.model_dir, 'vectorizer.pkl')
@@ -132,7 +127,6 @@ class MLModel:
             with open(vectorizer_path, 'wb') as f:
                 pickle.dump(self.vectorizer, f)
             
-            print(f"💾 Model saved to {self.model_dir}/")
             logger.info(f"Model saved successfully to {self.model_dir}/")
         except Exception as e:
             logger.error(f"Error saving model: {str(e)}", exc_info=True)
@@ -157,7 +151,6 @@ class MLModel:
             self.load_dataset()
             
             logger.info("Model loaded from saved files")
-            print("✅ Model loaded from saved files")
             return True
         except Exception as e:
             logger.error(f"Error loading model: {str(e)}", exc_info=True)
@@ -170,7 +163,7 @@ class MLModel:
             self.train_model()
     
     def predict(self, text: str) -> Tuple[str, float, List[Dict[str, Any]]]:
-        """Predict intent dari input text"""
+        """Predict intent from input text"""
         try:
             # Preprocess
             processed = self.preprocessor.preprocess(text)
@@ -201,7 +194,7 @@ class MLModel:
             raise
     
     def get_response(self, tag: str) -> str:
-        """Get random response berdasarkan tag"""
+        """Get random response based on tag"""
         try:
             for intent in self.intents_data['intents']:
                 if intent['tag'] == tag:
@@ -212,7 +205,7 @@ class MLModel:
             return "Terjadi kesalahan saat memproses respons."
     
     def predict_and_respond(self, user_input: str) -> Dict[str, Any]:
-        """Predict dan return response"""
+        """Predict and return response"""
         predicted_tag, confidence, top_3 = self.predict(user_input)
         response = self.get_response(predicted_tag)
         
