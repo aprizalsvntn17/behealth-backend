@@ -83,6 +83,16 @@ python app.py
 
 Server akan berjalan di `http://localhost:5000`
 
+### 7. Run with Streamlit (UI Mode)
+
+Untuk menjalankan antarmuka chat berbasis Streamlit:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Aplikasi akan berjalan di `http://localhost:8501`.
+
 ## API Endpoints
 
 ### 1. Health Check

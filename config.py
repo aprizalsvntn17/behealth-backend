@@ -11,7 +11,7 @@ class Config:
     PORT = int(os.getenv('PORT', 5000))
     
     MODEL_PATH = os.path.join(os.path.dirname(__file__), 'trained_models')
-    DATASET_PATH = os.path.join(os.path.dirname(__file__), 'datasets.json')
+    DATASET_PATH = os.path.join(os.path.dirname(__file__), 'sethealth.json')
     
     CONFIDENCE_THRESHOLD = float(os.getenv('CONFIDENCE_THRESHOLD', 0.35))
     
